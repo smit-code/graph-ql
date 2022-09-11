@@ -15,7 +15,8 @@ exports.getUser = async (req, res) => {
     first_name: user.first_name,
     last_name: user.last_name,
     email: user.email,
-    phone: user.phone
+    phone: user.phone,
+    address: user.address
   }
 
   return res
@@ -63,7 +64,8 @@ exports.updateUser = async (req, res) => {
     first_name: user.first_name,
     last_name: user.last_name,
     email: user.email,
-    phone: user.phone
+    phone: user.phone,
+    address: user.address
   }
 
   return res
