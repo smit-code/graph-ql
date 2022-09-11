@@ -16,15 +16,30 @@ app.use(cors(corsOptions))
 app.use(express.json())
 // app.use(express.urlencoded({ extended: false }))
 
+const users = []
+
 // app.use('/api', routes)
 app.use('/graphql', graphqlHTTP({
   schema: buildSchema(`
+
+      type User {
+        _id: ID!,
+        activity_name: String!,
+        max_capacity: Int!,
+        visibility: Boolean!
+      }
+
+      input UserInput {
+        activity_name: String!
+        max_capacity: Int!
+        visibility:Boolean!
+      }
       type RootQuery {
-        users: [String!]!
+        users: [User!]!
       }
 
       type RootMutation {
-        createUser(name: String) : String
+        createUser(userInput:UserInput) : User
       }
 
       schema {
@@ -34,14 +49,21 @@ app.use('/graphql', graphqlHTTP({
   `),
   rootValue: {
     users: () => {
-      return ['ram', 'shyam']
+      return users
     },
     createUser: (args) => {
-      const userName = args.name
-      return userName
+      const { userInput } = args
+      const user = {
+        _id: Math.random().toString(),
+        activity_name: userInput.activity_name,
+        max_capacity: userInput.max_capacity,
+        visibility: userInput.visibility
+      }
+      users.push(user)
+      return user
     }
   },
-  graphiql: true
+  graphiql: true // for visual ui interface
 }))
 // seed.seedAdmin()
 app.use(errorHandler)

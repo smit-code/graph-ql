@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/club')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { prepareSuccessResponse } = require('../utils/responseHandler')
