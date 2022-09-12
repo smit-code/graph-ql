@@ -43,7 +43,7 @@ app.use('/graphql', graphqlHTTP({
       }
 
       schema {
-        query: RootQuery
+        query: RootQuery 
         mutation: RootMutation
       }
   `),
