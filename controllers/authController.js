@@ -3,9 +3,8 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { prepareSuccessResponse } = require('../utils/responseHandler')
 
-exports.login = async (req, res) => {
-  const email = req.body.email
-  const password = req.body.password
+exports.login = async ({ authInput }) => {
+  const { email, password } = authInput
 
   const user = await User.findOne({ email })
   if (!user) {
@@ -25,28 +24,22 @@ exports.login = async (req, res) => {
   const token = jwt.sign(
     {
       id: user._id,
-      email: user.email,
-      role: user.role
+      email: user.email
     },
     process.env.SECRET_KEY,
     { expiresIn: '12h' }
   )
 
-  const result = {
+  return {
     token,
     user: {
       id: user._id,
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email
-    }
+    },
+    message: 'user successfully login'
   }
-
-  return res
-    .status(200)
-    .json(
-      prepareSuccessResponse(result, 'Logged in successfully.')
-    )
 }
 
 exports.registerUser = async ({ userInput }, req) => {
