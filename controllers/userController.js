@@ -24,22 +24,18 @@ exports.getUser = async (req, res) => {
     .json(prepareSuccessResponse(result, 'User retrieved successfully.'))
 }
 
-exports.getAllUsers = async (req, res) => {
+exports.users = async () => {
   const users = await User.find().select('-password')
-
-  const result = users.map((user) => {
+  return users.map((user) => {
     return {
-      id: user._id,
+      _id: user._id,
       first_name: user.first_name,
       last_name: user.last_name,
+      address: user.address,
       email: user.email,
       phone: user.phone
     }
   })
-
-  return res
-    .status(200)
-    .json(prepareSuccessResponse(result, 'Users retrieved successfully.'))
 }
 
 exports.updateUser = async (req, res) => {

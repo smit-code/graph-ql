@@ -6,7 +6,7 @@ exports.seedAdmin = async () => {
   if (!admin) {
     const hashedPw = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10)
     await User.create({
-      first_name: 'first',
+      first_name: 'graphql',
       last_name: 'Admin',
       email: process.env.ADMIN_EMAIL,
       role: 'admin',

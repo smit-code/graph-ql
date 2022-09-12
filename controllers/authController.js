@@ -1,4 +1,4 @@
-const User = require('../models/club')
+const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { prepareSuccessResponse } = require('../utils/responseHandler')
@@ -49,35 +49,16 @@ exports.login = async (req, res) => {
     )
 }
 
-exports.register = async (req, res) => {
-  const hashedPw = await bcrypt.hash(req.body.password, 10)
-
-  const firstName = req.body.first_name
-  const lastName = req.body.last_name
-  const email = req.body.email
-  const phone = req.body.phone
-  const role = 'user'
-
-  const newUser = new User({
-    first_name: firstName,
-    last_name: lastName,
-    password: hashedPw,
-    email,
-    phone,
-    role
-  })
-
-  const user = await newUser.save()
-
-  const result = {
-    id: user._id,
-    first_name: user.first_name,
-    last_name: user.last_name,
-    email: user.email,
-    phone: user.phone
+exports.registerUser = async ({ userInput }, req) => {
+  const hashPassword = await bcrypt.hash(userInput.password, 12)
+  const user = {
+    first_name: userInput.first_name,
+    last_name: userInput.last_name,
+    address: userInput.address,
+    email: userInput.email,
+    phone: userInput.phone,
+    password: hashPassword
   }
-
-  return res
-    .status(200)
-    .json(prepareSuccessResponse(result, 'User saved successfully.'))
+  const newUser = await User.create(user)
+  return newUser._doc
 }
