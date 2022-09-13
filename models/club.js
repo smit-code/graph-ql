@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 const clubSchema = new Schema(
   {
-    _id: { type: String },
     activity_id_enc: { type: String },
     activity_name: { type: String },
     description: { type: String },

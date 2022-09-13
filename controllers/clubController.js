@@ -5,11 +5,44 @@ exports.clubs = async () => {
 }
 
 exports.createClub = async ({ clubInput }, req) => {
-  const club = {
-    activity_name: clubInput.activity_name,
-    max_capacity: clubInput.max_capacity,
-    visibility: clubInput.visibility
-  }
-  const newClub = await Club.create(club)
+  const newClub = await Club.create(clubInput)
   return newClub._doc
+}
+
+exports.updateClub = async ({ id, clubUpdateInput }, req) => {
+  const updatedClub = await Club.findByIdAndUpdate(id, clubUpdateInput, { new: true })
+
+  if (!updatedClub) {
+    const error = new Error('Could not find a club')
+    error.statusCode = 422
+    throw error
+  }
+
+  return updatedClub
+}
+
+exports.getClubById = async ({ id }, req) => {
+  const club = await Club.findById(id)
+
+  if (!club) {
+    const error = new Error('Could not find a club')
+    error.statusCode = 422
+    throw error
+  }
+
+  return club
+}
+
+exports.deleteClubById = async ({ id }, req) => {
+  const club = await Club.findByIdAndDelete(id)
+
+  if (!club) {
+    const error = new Error('Could not find a club')
+    error.statusCode = 422
+    throw error
+  }
+
+  return {
+    message: 'Successfully deleted club !'
+  }
 }
