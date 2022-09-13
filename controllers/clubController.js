@@ -1,6 +1,12 @@
 const Club = require('../models/club')
 
-exports.clubs = async () => {
+exports.clubs = async (_, req) => {
+  const user = req.user
+  if (!user) {
+    const error = new Error('you are not authorize!')
+    error.statusCode = 401
+    throw error
+  }
   return Club.find().lean()
 }
 
