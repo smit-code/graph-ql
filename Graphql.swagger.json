@@ -1,0 +1,223 @@
+{
+	"swagger": "2.0",
+	"title" : "Graphql API Documentation",
+	"info": {
+		"_postman_id": "f8ae846c-48e2-4b3c-b4bc-46b5bb2bda7d",
+		"name": "Graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23016828"
+	},
+	"item": [
+		{
+			"name": "Clubs",
+			"item": [
+				{
+					"name": "create_club",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    createClub(clubInput:{\r\n  activity_id_enc: \"v3w9_bWOftDGT0UYULtuYmN3poaW4EfNV8P1UMvzcQo\",\r\n  activity_name: \"Trampoline Workout Class\",\r\n  description: \"We offer trampoline workout classes that strengthen your core, tone your muscles, burn calories, and will leave you smiling for days.\",\r\n  visibility: false,\r\n  manual_validation_flag: true,\r\n  provider_name: \"EMS TechnoFit Fitness Center create\",\r\n  provider_id: \"017bb32cf5981210b764200000012345\",\r\n  branch_name: \"EMS TechnoFit Fitness Center - Al Markaziyah\",\r\n  branch_id: \"017bb32cf81a1220b774200000012345\",\r\n  max_capacity: 10,\r\n  cost: {\r\n    cost: 50,\r\n    currency: \"AED\"\r\n  },\r\n  expected_duration: {\r\n    duration: 45,\r\n    unit: \"minutes\"\r\n  },\r\n  address: {\r\n    address_line_1: \"EMS TechnoFit Fitness Center\",\r\n    street: \"Khalifa Bin Zayed The First St\",\r\n    area: \"Al Markaziyah\",\r\n    landmark: null,\r\n    city: \"Abu Dhabi\",\r\n    state: \"Abu Dhabi\",\r\n    country: \"United Arab Emirates\",\r\n    location: {\r\n      latitude: 24.494555,\r\n      longitude: 54.3690503\r\n    }\r\n  },\r\n  category: {\r\n    category_id: \"61345c82b30fbffbab0a0aa4\",\r\n    category_name: \"Fitness centers\",\r\n    category_l1: \"Sports & Games\",\r\n    category_l1_id: \"SAG\"\r\n  },\r\n  weblinks: {\r\n    website: \"technofit.ae\",\r\n    instagram: \"https://www.instagram.com/technofit.ae/\",\r\n    email: \"wecare@technofit.ae\",\r\n    facebook: \"https://www.facebook.com/technofit.ae\"\r\n  },\r\n  images: [],\r\n  is_visit_flag: true,\r\n  type: \"visit\",\r\n  time_slots: [\r\n    {\r\n      start_time: \"2021-09-09T09:00:51.509Z\",\r\n      end_time: \"2022-03-05T21:00:00.000Z\",\r\n      start_date: \"2021-09-09T13:27:51.509Z\",\r\n      ending_type: {\r\n        type: \"ends-never\"\r\n      },\r\n      repeat_on: [\r\n        \"Monday\",\r\n        \"Tuesday\",\r\n        \"Wednesday\",\r\n        \"Thursday\",\r\n        \"Friday\",\r\n        \"Sunday\",\r\n        \"Saturday\"\r\n      ],\r\n      repeat_every: 1,\r\n      repeat_frequency: \"week\"\r\n    }\r\n  ],\r\n  flags: [\r\n    \"indoor_only\"\r\n  ],\r\n  traits: {\r\n    services: {\r\n      extra_services: [\r\n        {\r\n          service: \"Beverages\",\r\n          cost: \"\",\r\n          currency: \"\"\r\n        },\r\n        {\r\n          service: \"Showers\",\r\n          cost: \"\",\r\n          currency: \"\"\r\n        },\r\n        {\r\n          service: \"Changing rooms\",\r\n          cost: \"\",\r\n          currency: \"\"\r\n        },\r\n        {\r\n          service: \"Lockers\",\r\n          cost: \"\",\r\n          currency: \"\"\r\n        }\r\n      ]\r\n    },\r\n    booking: {\r\n      booking_requirement: \"Mandatory\",\r\n      booking_methods: [\r\n        {\r\n          method: \"Phone call\",\r\n          contact: \"971508001870\"\r\n        }\r\n      ]\r\n    },\r\n    documents: {\r\n      documents_requirement: [\r\n        \"None\"\r\n      ]\r\n    },\r\n    dress_code_equipment: {\r\n      dress_code: [\r\n        \"Sportswear\"\r\n      ],\r\n      equipment_requirement: \"No\"\r\n    },\r\n    payment: {\r\n      payment_method: [\r\n        \"Cash\",\r\n        \"Credit card\",\r\n        \"Debit card\"\r\n      ]\r\n    },\r\n    languages: {\r\n      languages_spoken: [\r\n        \"Arabic \",\r\n        \"English \"\r\n      ]\r\n    },\r\n    parking: {\r\n      parking_availability: true\r\n    },\r\n    weather: {\r\n      weather_condition_tolerant: true\r\n    }\r\n  },\r\n  source: {\r\n    address: \"branch\",\r\n    time_slots: \"branch\",\r\n    images: \"activity\"\r\n  },\r\n  ts_create:\"2021-09-09T14:15:47.279Z\",\r\n  ts_update: \"2022-08-22T09:06:59.292Z\",\r\n  last_updated_by: \"nourhan.chanawani@smartsource.me\",\r\n  ts_etl_run:  \"2022-08-22T12:00:10.805Z\",\r\n  ts_validate: \"2022-08-22T09:06:59.220Z\",\r\n  last_validated_by: \"support@mazingday.com\",\r\n  system_validation_flag: true,\r\n  validity: true,\r\n  expired: false,\r\n  issues: [\r\n    {\r\n      impact: \"low\",\r\n      field: \"landmark\",\r\n      source: \"address\",\r\n      message: \"Missing data\"\r\n    },\r\n    {\r\n      impact: \"low\",\r\n      field: \"images\",\r\n      source: \"activity\",\r\n      message: \"No images found for the activity and its branch\"\r\n    }\r\n  ]\r\n}){\r\n    activity_name\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllClubData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\r\n    clubs{\r\n        activity_name\r\n        \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetClubById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\r\n    getClubById(id:\"63204a6430ae447737e80d4e\"){\r\n        activity_name\r\n          ts_create\r\n          ts_update\r\n           branch_name\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateClub(id:\"63204a6430ae447737e80d4e\",clubUpdateInput:{\r\nactivity_id_enc: \"v3w9_bWOftDGT0UYULtuYmN3poaW4EfNV8P1UMvzcQo\",\r\n  activity_name: \"Trampoline Workout Class\",\r\n  description: \"We offer trampoline workout classes that strengthen your core, tone your muscles, burn calories, and will leave you smiling for days updated for demo.\",\r\n  visibility: false,\r\n  manual_validation_flag: true,\r\n  provider_name: \"EMS TechnoFit Fitness Center create\",\r\n  provider_id: \"017bb32cf5981210b764200000012345\",\r\n  branch_name: \"EMS TechnoFit Fitness Center - Al Markaziyah\",\r\n  branch_id: \"017bb32cf81a1220b774200000012345\",\r\n  max_capacity: 10,\r\n  cost: {\r\n    cost: 50,\r\n    currency: \"AED\"\r\n  },\r\n  expected_duration: {\r\n    duration: 45,\r\n    unit: \"minutes\"\r\n  },\r\n  address: {\r\n    address_line_1: \"EMS TechnoFit Fitness Center\",\r\n    street: \"Khalifa Bin Zayed The First St\",\r\n    area: \"Al Markaziyah\",\r\n    landmark: null,\r\n    city: \"Abu Dhabi\",\r\n    state: \"Abu Dhabi\",\r\n    country: \"United Arab Emirates\",\r\n    location: {\r\n      latitude: 24.494555,\r\n      longitude: 54.3690503\r\n    }\r\n  },\r\n  category: {\r\n    category_id: \"61345c82b30fbffbab0a0aa4\",\r\n    category_name: \"Fitness centers\",\r\n    category_l1: \"Sports & Games\",\r\n    category_l1_id: \"SAG\"\r\n  },\r\n  weblinks: {\r\n    website: \"technofit.ae\",\r\n    instagram: \"https://www.instagram.com/technofit.ae/\",\r\n    email: \"wecare@technofit.ae\",\r\n    facebook: \"https://www.facebook.com/technofit.ae\"\r\n  },\r\n  images: [],\r\n  is_visit_flag: true,\r\n  type: \"visit\",\r\n    }){\r\n        activity_name\r\n        activity_id_enc\r\n        activity_name\r\n        description\r\n        visibility\r\n        manual_validation_flag\r\n        provider_name\r\n        provider_id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\r\n    deleteClubById(id:\"63204a6430ae447737e80d4e\"){\r\n        message\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\r\n    login(authInput:{email:\"user@graphql.com\", password:\"123456\"}){\r\n        token\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    registerUser(userInput:{first_name: \"graphql\", last_name: \"demo\", email: \"user@graphql.com\", password:\"123456\"}){\r\n        email\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

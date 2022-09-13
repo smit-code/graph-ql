@@ -5,6 +5,12 @@ exports.clubs = async () => {
 }
 
 exports.createClub = async ({ clubInput }, req) => {
+  const user = req.user
+  if (!user) {
+    const error = new Error('you are not authorize !')
+    error.statusCode = 401
+    throw error
+  }
   const newClub = await Club.create(clubInput)
   return newClub._doc
 }

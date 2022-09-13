@@ -162,6 +162,10 @@ module.exports = buildSchema(`
         valet_parking: Boolean
       }
       
+      type Weather {
+        weather_condition_tolerant: Boolean
+      }
+      
       type Traits {
         services: Service
         booking: Booking
@@ -171,6 +175,7 @@ module.exports = buildSchema(`
         payment: Payment
         languages: Languages
         parking: Parking
+        weather: Weather
       }
       type Source {
         address: String
@@ -338,6 +343,9 @@ module.exports = buildSchema(`
         parking_availability: Boolean
         valet_parking: Boolean
       }
+      input WeatherInput {
+        weather_condition_tolerant: Boolean
+      }
       
       input TraitsInput {
         services: ServiceInput
@@ -347,7 +355,8 @@ module.exports = buildSchema(`
         dress_code_equipment: DressCodeEquipmentInput,
         payment: PaymentInput
         languages: LanguagesInput
-        parking: ParkingInput
+        parking: ParkingInput,
+        weather: WeatherInput
       }
       input SourceInput {
         address: String
